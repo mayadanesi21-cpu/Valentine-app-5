@@ -21,10 +21,6 @@ Fully animated, mobile-friendly, and ready to deploy on **Vercel**.
 ## Workflows
 ---
 
-
-> Requires Node.js and npm (or use GitHub codespaces if on Android)
-
-```bash
 # Install dependencies
 npm install
 
