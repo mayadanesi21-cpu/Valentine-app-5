@@ -1,16 +1,96 @@
-/* Tailwind imports */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* General body styling */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #ffe4e1; /* fallback in case gradient fails */
+  background: linear-gradient(135deg, #ffc1cc, #ff6b81, #ff4d6d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* Pulsing animation for hearts (used in App.tsx) */
+/* Buttons */
+button {
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  border-radius: 9999px; /* fully rounded */
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Solid pink button */
+.button-solid {
+  background-color: #ff6b81;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.button-solid:hover {
+  background-color: #ff4d6d;
+}
+
+/* Outline pink button */
+.button-outline {
+  background-color: transparent;
+  border: 2px solid #ff6b81;
+  color: #ff6b81;
+}
+
+.button-outline:hover {
+  background-color: rgba(255,107,129,0.1);
+}
+
+/* Card styling */
+.card {
+  background-color: white;
+  border-radius: 2rem;
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+/* Headers */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff6b81;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff6b81;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.2rem;
+  color: #ff4d6d;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+/* Heart animation (main heart logo) */
+.heart-pulse {
+  width: 100px;
+  height: 100px;
+  animation: pulse-heart 1s infinite;
+  margin: 0 auto;
+}
+
 @keyframes pulse-heart {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.2); }
@@ -24,10 +104,11 @@ body {
 }
 
 .heart-floating {
+  position: absolute;
   animation: float-heart 3s infinite ease-in-out;
 }
 
-/* Confetti animation for celebration page */
+/* Confetti animation */
 @keyframes confetti-fall {
   0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
   100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
@@ -41,18 +122,3 @@ body {
   animation: confetti-fall 3s linear infinite;
   border-radius: 2px;
 }
-
-/* Custom gradient background if needed */
-.bg-valentine {
-  background: linear-gradient(135deg, #ffc1cc, #ff6b81, #ff4d6d);
-}
-
-/* Button hover scaling override for smooth effect */
-button {
-  transition: all 0.3s ease-in-out;
-}
-
-/* Optional: responsive font sizes */
-h1, h2, h3 {
-  line-height: 1.2;
-  }
