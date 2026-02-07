@@ -1,3 +1,58 @@
+/* Tailwind imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* General body styling */
 body {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #ffe4e1; /* fallback in case gradient fails */
 }
+
+/* Pulsing animation for hearts (used in App.tsx) */
+@keyframes pulse-heart {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Floating hearts animation */
+@keyframes float-heart {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  50% { transform: translateY(-20px) rotate(10deg); opacity: 0.7; }
+  100% { transform: translateY(-40px) rotate(-10deg); opacity: 0; }
+}
+
+.heart-floating {
+  animation: float-heart 3s infinite ease-in-out;
+}
+
+/* Confetti animation for celebration page */
+@keyframes confetti-fall {
+  0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ff6b81;
+  animation: confetti-fall 3s linear infinite;
+  border-radius: 2px;
+}
+
+/* Custom gradient background if needed */
+.bg-valentine {
+  background: linear-gradient(135deg, #ffc1cc, #ff6b81, #ff4d6d);
+}
+
+/* Button hover scaling override for smooth effect */
+button {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Optional: responsive font sizes */
+h1, h2, h3 {
+  line-height: 1.2;
+  }
