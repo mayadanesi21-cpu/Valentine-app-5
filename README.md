@@ -1,16 +1,22 @@
-# vite-react-starter
+# Valentine Proposal App 💖
 
-A basic starter template for building React apps with Vite.
+A beautiful, romantic, multi-step Valentine’s Day proposal web app built with **React + TypeScript**.  
+Fully animated, mobile-friendly, and ready to deploy on **Vercel**.
 
-Create a new local app like this:
+---
 
-```sh
-# Fetch files from this repo
-npx tiged amannn/vite-react-starter YOUR_FOLDER_NAME
+## 🌸 Features
 
-# Install dependencies
-npm install
-```
+- Multi-step proposal: Landing → Question → Celebration  
+- Pulsing heart animation and floating hearts  
+- Yes / No buttons with playful interaction  
+- Romantic gradient background and responsive design  
+- Works on mobile (Android, iOS) and desktop  
+- Fully customizable text, colors, and animations  
+
+---
+
+## 🛠 Project Structure
 
 ## Workflows
 
