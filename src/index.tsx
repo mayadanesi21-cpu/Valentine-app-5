@@ -1,7 +1,18 @@
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import './index.css'; // Vanilla CSS for mobile-friendly styling
 
-const rootNode = document.getElementById('root') as HTMLElement;
-const root = ReactDOM.createRoot(rootNode);
+// Create root element
+const rootElement = document.getElementById('root');
 
-root.render(<App />);
+if (!rootElement) {
+  throw new Error('Failed to find the root element');
+}
+
+// Render the app
+ReactDOM.createRoot(rootElement).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
