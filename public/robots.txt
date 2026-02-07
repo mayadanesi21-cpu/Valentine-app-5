@@ -1,2 +1,6 @@
+# Allow all search engines to crawl the site
 User-agent: *
 Disallow:
+
+# Optional: add a sitemap if you have one
+# Sitemap: https://your-site-url.com/sitemap.xml
