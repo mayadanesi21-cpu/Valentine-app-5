@@ -1,32 +1,35 @@
-import globals from 'globals';
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import { defineConfig } from "eslint-define-config";
 
-export default tseslint.config(
-  eslint.configs.recommended,
-  tseslint.configs.recommended,
-  {
-    plugins: {
-      'react-hooks': reactHooksPlugin
+export default defineConfig({
+  root: true,
+  env: {
+    browser: true,
+    es2021: true,
+  },
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: 2021,
+    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true,
     },
-    settings: {
-      react: {
-        version: 'detect'
-      }
+  },
+  plugins: ["react", "@typescript-eslint"],
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+  ],
+  settings: {
+    react: {
+      version: "detect",
     },
-    languageOptions: {
-      globals: {
-        ...globals.browser
-      },
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true
-        }
-      }
-    },
-    rules: {
-      ...reactHooksPlugin.configs.recommended.rules
-    }
-  }
-);
+  },
+  rules: {
+    "react/react-in-jsx-scope": "off", // React 17+ doesn't require import React
+    "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
+    "no-console": "warn",
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+  },
+});
