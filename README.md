@@ -16,18 +16,20 @@ Fully animated, mobile-friendly, and ready to deploy on **Vercel**.
 
 ---
 
-## 🛠 Project Structure
+
 
 ## Workflows
+---
 
-```sh
+
+> Requires Node.js and npm (or use GitHub codespaces if on Android)
+
+```bash
+# Install dependencies
+npm install
+
 # Start the development server
 npm run dev
 
-# Lint for TypeScript and ESLint errors
-npm run lint
-
-# Run the app in production
+# Build for production
 npm run build
-npm run start
-```
